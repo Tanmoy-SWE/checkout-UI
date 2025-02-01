@@ -1,4 +1,4 @@
-"use client"; // ✅ Add this at the top
+"use client";
 
 import { useState } from "react";
 import ChatBox from "./ChatBox";
@@ -18,7 +18,7 @@ export default function ChatPage() {
         throw new Error(errorData.error || "Failed to reset chat");
       }
 
-      // Reset chat messages in frontend
+      // ✅ Reset messages in frontend
       setMessages([]);
     } catch (error) {
       console.error("Error clearing chat:", error);
@@ -27,10 +27,9 @@ export default function ChatPage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      
+      {/* ✅ Pass messages and setMessages to ChatBox */}
+      <ChatBox />
 
-      {/* Chat Box */}
-      <ChatBox/>
       {/* New Chat Button */}
       <button
         onClick={clearChat}
