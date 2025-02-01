@@ -1,3 +1,5 @@
+import type { Restaurant } from "./ChatBox";
+
 const ChatCard = ({ data }: { data: Restaurant[] }) => {
   if (!Array.isArray(data)) return null;
 
