@@ -1,4 +1,13 @@
-import type { Restaurant } from "./ChatBox";
+interface Restaurant {
+    name: string;
+    cuisine: string;
+    address?: string;
+    ratings?: string;
+    website?: string;
+    phone?: string;
+    googleMapsUrl: string;
+  }
+  
 
 
 const ChatCard = ({ data }: { data: Restaurant[] }) => {
