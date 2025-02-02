@@ -92,6 +92,9 @@ const ChatBox = () => {
       console.error("Error clearing chat:", error);
     }
   };
+  const formatBoldText = (text: string) => {
+    return text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  };
   
   
   
@@ -121,7 +124,10 @@ const ChatBox = () => {
             }
             />
             ) : (
-            msg.reply.message
+                <div
+    className="bg-gray-200 text-black p-3 rounded-2xl max-w-xs text-sm shadow-md whitespace-pre-line"
+    dangerouslySetInnerHTML={{ __html: formatBoldText(msg.reply.message) }} // Apply formatting
+  />
             )}
         </div>
         </div>
