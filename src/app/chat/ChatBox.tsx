@@ -36,7 +36,7 @@ const ChatBox = () => {
     setInput(""); // Clear input field right after sending
   
     try {
-      const response = await fetch("https://checkout-bd-85e160a01ddd.herokuapp.com/", {
+      const response = await fetch("https://checkout-chatapp-2922efef3720.herokuapp.com/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: input }),
@@ -79,7 +79,7 @@ const ChatBox = () => {
 
   const clearChat = async () => {
     try {
-      const response = await fetch("http://localhost:8000/new_chat/", {
+      const response = await fetch("https://checkout-chatapp-2922efef3720.herokuapp.com/new_chat/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       });
